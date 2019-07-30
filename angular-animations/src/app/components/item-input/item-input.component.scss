@@ -1,0 +1,64 @@
+@import 'mixins';
+@import 'variables';
+
+.modal-box {
+  position: fixed;
+  z-index: $zindex-modal-backdrop;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(black, 0.6);
+  }
+
+  .modal {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    .modal-dialog {
+      min-width: 50%;
+      margin: 0;
+    }
+
+    .modal-content {
+      border-radius: $modal-content-border-radius $modal-content-border-radius 0 0;
+    }
+  }
+}
+
+.inputs {
+  width: 100%;
+
+  .form-group {
+    margin: 1rem 2rem;
+
+    &.with-icon {
+      display: flex;
+      align-items: center;
+
+      label {
+        display: flex;
+        margin: 0 1rem 0 0;
+        color: theme-color('primary');
+        font-size: 1.2em;
+      }
+
+      .form-control {
+        flex-grow: 1;
+      }
+    }
+  }
+}
+
+.todo-text {
+  min-width: 200px;
+  resize: none;
+}

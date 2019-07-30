@@ -1,0 +1,12 @@
+@import 'mixins';
+@import 'variables';
+
+.selected {
+  background-color: rgba(theme-color('primary'), 0.2);
+}
+
+.header {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}

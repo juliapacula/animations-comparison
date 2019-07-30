@@ -1,0 +1,17 @@
+<div *ngIf="selectedTodos.length !== 0" class="header">
+  <button
+    (click)="removeSelected()"
+    class="btn btn-secondary"
+    type="button">Delete
+  </button>
+</div>
+
+<ul class="list-group my-4">
+  <li
+    *ngFor="let todo of todos"
+    (click)="clickTodoItem(todo)"
+    [class.selected]="selectedTodos.includes(todo)"
+    class="list-group-item">
+    {{ todo.text }}
+  </li>
+</ul>

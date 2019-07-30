@@ -1,0 +1,17 @@
+@import 'mixins';
+@import 'variables';
+
+.floating-button {
+  display: flex;
+  position: fixed;
+  z-index: $zindex-popover;
+  right: 2rem;
+  bottom: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-fab {
+  @include square(50px);
+  border-radius: 50%;
+}
