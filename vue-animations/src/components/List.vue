@@ -7,15 +7,18 @@
         type="button">Delete
       </button>
     </div>
-    <ul class="list-group my-4">
-      <template v-for="todo in todos">
-        <ListItem
-          :key="todo.id"
-          :todo="todo"
-          @deselected="deselectTodo"
-          @selected="selectTodo" />
-      </template>
-    </ul>
+    <transition-group
+      tag="ul"
+      class="list-group my-4"
+      name="stagerred-list">
+      <ListItem
+        v-for="(todo, index) in todos"
+        :key="todo.id"
+        :todo="todo"
+        @deselected="deselectTodo"
+        @selected="selectTodo"
+        :data-index="index" />
+    </transition-group>
   </div>
 </template>
 

@@ -5,11 +5,19 @@
     </div>
 
     <div class="floating-button">
-      <button
-        @click="isItemInputVisible = !isItemInputVisible"
-        class="btn btn-primary btn-fab">
-        <i class="mdi mdi-plus"></i>
-      </button>
+      <transition
+        name="jump"
+        appear>
+        <button
+          v-if="showButton"
+          @click="isItemInputVisible = !isItemInputVisible"
+          class="btn btn-primary btn-fab">
+          <transition :name="isItemInputVisible ? 'rotate-left' : 'rotate-right'" mode="out-in">
+            <div v-if="isItemInputVisible" :key="'close'" class="mdi mdi-close"></div>
+            <div v-else :key="'open'" class="mdi mdi-plus"></div>
+          </transition>
+        </button>
+      </transition>
     </div>
 
     <ItemInput
@@ -30,8 +38,15 @@ export default Vue.extend({
   },
   data() {
     return {
+      showButton: false,
       isItemInputVisible: false,
     };
+  },
+  mounted(): void {
+    this.showButton = true;
+  },
+  beforeDestroy(): void {
+    this.showButton = false;
   },
 });
 </script>

@@ -17,10 +17,32 @@
       </ul>
     </div>
     <div class="container">
-      <router-view />
+      <transition :name="transitionName">
+        <router-view />
+      </transition>
     </div>
   </div>
 </template>
+
+
+<script lang="ts">
+import Vue from 'vue';
+
+export default Vue.extend({
+  name: 'app',
+  data() {
+    return {
+      transitionName: 'slide',
+    };
+  },
+  created(): void {
+    this.$router.beforeEach((to, from, next) => {
+      this.transitionName = from.meta.tab ? `slide-${from.meta.tab}` : 'slide';
+      next();
+    });
+  },
+});
+</script>
 
 <style lang="scss">
 @import 'styles';

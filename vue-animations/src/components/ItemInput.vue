@@ -1,46 +1,48 @@
 <template>
-  <div
-    v-if="isVisible"
-    class="modal-box">
-    <div class="modal">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Add new todo</h5>
-          </div>
-          <div class="modal-body">
-            <div class="inputs">
-              <div class="form-group">
+  <transition name="modal">
+    <div
+      v-if="isVisible"
+      class="modal-box">
+      <div class="modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Add new todo</h5>
+            </div>
+            <div class="modal-body">
+              <div class="inputs">
+                <div class="form-group">
               <textarea
                 v-model="todoToAddText"
                 class="form-control todo-text"
                 cols="30"
                 id="todo-text"
                 rows="5"></textarea>
-              </div>
-              <div class="form-group with-icon">
-                <label for="todo-interval"><i class="mdi mdi-timer-sand mr-2"></i>Interval</label>
-                <input
-                  type="number"
-                  class="form-control"
-                  id="todo-interval"
-                  v-model="intervalNumber" />
+                </div>
+                <div class="form-group with-icon">
+                  <label for="todo-interval"><i class="mdi mdi-timer-sand mr-2"></i>Interval</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="todo-interval"
+                    v-model="intervalNumber" />
+                </div>
               </div>
             </div>
-          </div>
-          <div class="modal-footer">
-            <button
-              @click="addTodo"
-              class="btn btn-primary">
-              Add
-            </button>
+            <div class="modal-footer">
+              <button
+                @click="addTodo"
+                class="btn btn-primary">
+                Add
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="overlay"></div>
-  </div>
+      <div class="overlay"></div>
+    </div>
+  </transition>
 </template>
 
 <script>

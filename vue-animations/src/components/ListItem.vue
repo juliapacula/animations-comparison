@@ -38,7 +38,13 @@ export default Vue.extend({
 @import 'mixins';
 @import 'variables';
 
-.selected {
-  background-color: rgba(theme-color('primary'), 0.2);
+
+.list-group-item {
+  transition: 100ms background-color;
+  cursor: pointer;
+
+  &.selected {
+    background-color: rgba(theme-color('primary'), 0.2);
+  }
 }
 </style>

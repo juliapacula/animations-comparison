@@ -1,0 +1,110 @@
+@import 'mixins';
+@import 'variables';
+
+
+.jump {
+  &-enter,
+  &-leave-to {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+
+  &-enter-to,
+  &-leave {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  &-enter-active,
+  &-leave-active {
+    transition: all 150ms ease-in;
+  }
+}
+
+.stagerred-list {
+  &-enter {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  &-leave-to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  &-enter-to,
+  &-leave {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  &-enter-active,
+  &-leave-active {
+    transition: all 800ms ease-in;
+  }
+}
+
+.rotate-left {
+  &-leave {
+    transform: rotate(0);
+  }
+
+  &-leave-to {
+    transform: rotate(45deg);
+  }
+
+  &-leave-active {
+    transition: all 50ms ease-in;
+  }
+}
+
+.rotate-right {
+  &-leave {
+    transform: rotate(0);
+  }
+
+  &-leave-to {
+    transform: rotate(-45deg);
+  }
+
+  &-leave-active {
+    transition: all 50ms ease-in;
+  }
+}
+
+.modal {
+  &-enter,
+  &-leave-to {
+    .modal {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+
+    .overlay {
+      opacity: 0;
+    }
+  }
+
+  &-enter-to,
+  &-leave {
+    .modal {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .overlay {
+      opacity: 1;
+    }
+  }
+
+  &-enter-active,
+  &-leave-active {
+    $transition-time: 150ms;
+    transition: all $transition-time ease-in;
+
+    .modal,
+    .overlay {
+      transition: all $transition-time ease-in;
+    }
+  }
+}
