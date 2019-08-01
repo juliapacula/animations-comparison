@@ -15,3 +15,7 @@
   @include square(50px);
   border-radius: 50%;
 }
+
+.open {
+  transform: rotate(45deg);
+}

@@ -1,12 +1,21 @@
 @import 'mixins';
 @import 'variables';
 
-.selected {
-  background-color: rgba(theme-color('primary'), 0.2);
+.list-group-item {
+  transition: 100ms background-color;
+  cursor: pointer;
+
+  &.selected {
+    background-color: rgba(theme-color('primary'), 0.2);
+  }
 }
 
 .header {
   display: flex;
   justify-content: flex-end;
+  overflow-y: hidden;
+}
+
+.collapsible {
   margin-top: 1rem;
 }

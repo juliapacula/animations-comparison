@@ -24,7 +24,8 @@
       "@services": ["src/app/services/index.ts"],
       "@services/*": ["src/app/services/*"],
       "@models": ["src/app/models/index.ts"],
-      "@models/*": ["src/app/models/*"]
+      "@models/*": ["src/app/models/*"],
+      "@animations": ["src/animations/index.ts"]
     }
   }
 }

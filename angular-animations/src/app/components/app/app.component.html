@@ -1,4 +1,3 @@
-<!--The content below is only a placeholder and can be replaced.-->
 <div class="navbar navbar-expand navbar-dark bg-dark">
   <ul class="navbar-nav">
     <li class="nav-item">
@@ -18,6 +17,6 @@
   </ul>
 </div>
 
-<div class="container">
-  <router-outlet></router-outlet>
+<div [@routeAnimations]="prepareRoute(outlet)">
+  <router-outlet #outlet="outlet"></router-outlet>
 </div>
