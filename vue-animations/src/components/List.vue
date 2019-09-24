@@ -1,23 +1,26 @@
 <template>
   <div>
-    <div v-if="selectedTodos.length !== 0" class="header">
+    <div
+      v-if="selectedTodos.length !== 0"
+      class="header">
       <button
-        @click="removeSelected"
         class="btn btn-secondary"
-        type="button">Delete
+        type="button"
+        @click="removeSelected">
+        Delete
       </button>
     </div>
     <transition-group
-      tag="ul"
       class="list-group my-4"
-      name="stagerred-list">
+      name="stagerred-list"
+      tag="ul">
       <ListItem
         v-for="(todo, index) in todos"
+        :data-index="index"
         :key="todo.id"
         :todo="todo"
         @deselected="deselectTodo"
-        @selected="selectTodo"
-        :data-index="index" />
+        @selected="selectTodo" />
     </transition-group>
   </div>
 </template>

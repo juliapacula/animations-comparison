@@ -2,9 +2,12 @@
 
 @import 'mixins';
 @import 'variables';
+@import 'theme';
 @import 'bootstrap/scss/bootstrap';
 
 $mdi-font-path: '../node_modules/@mdi/font/fonts';
 @import '@mdi/font/scss/materialdesignicons';
 
 @import 'transitions';
+@import 'bootstrap-tweaks';
+

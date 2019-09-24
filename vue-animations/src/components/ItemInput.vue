@@ -12,27 +12,27 @@
             <div class="modal-body">
               <div class="inputs">
                 <div class="form-group">
-              <textarea
-                v-model="todoToAddText"
-                class="form-control todo-text"
-                cols="30"
-                id="todo-text"
-                rows="5"></textarea>
+                  <textarea
+                    id="todo-text"
+                    v-model="todoToAddText"
+                    class="form-control todo-text"
+                    cols="30"
+                    rows="5"></textarea>
                 </div>
                 <div class="form-group with-icon">
                   <label for="todo-interval"><i class="mdi mdi-timer-sand mr-2"></i>Interval</label>
                   <input
-                    type="number"
-                    class="form-control"
                     id="todo-interval"
-                    v-model="intervalNumber" />
+                    v-model="intervalNumber"
+                    class="form-control"
+                    type="number" />
                 </div>
               </div>
             </div>
             <div class="modal-footer">
               <button
-                @click="addTodo"
-                class="btn btn-primary">
+                class="btn btn-primary"
+                @click="addTodo">
                 Add
               </button>
             </div>
@@ -76,6 +76,8 @@ export default Vue.extend({
 });
 </script>
 
-<style lang="scss" scoped>
+<style
+  lang="scss"
+  scoped>
 @import 'components/item-input';
 </style>

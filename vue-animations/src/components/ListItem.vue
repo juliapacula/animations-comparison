@@ -38,13 +38,14 @@ export default Vue.extend({
 @import 'mixins';
 @import 'variables';
 
-
 .list-group-item {
   transition: 100ms background-color;
   cursor: pointer;
+  background-color: v('surface');
+  color: v('on-surface');
 
   &.selected {
-    background-color: rgba(theme-color('primary'), 0.2);
+    background-color: rgba(v('primary'), 0.2);
   }
 }
 </style>

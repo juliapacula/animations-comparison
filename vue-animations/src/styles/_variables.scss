@@ -1,4 +1,44 @@
-$body-bg: #e1e1e1;
 $enable-shadows: true;
 
+$theme-colors: (
+  'primary': #6200ee,
+  'secondary': #03dac6,
+  'background': #e8e8e8,
+  'surface': #ffffff,
+  'error': #b00020,
+  'on-primary': #ffffff,
+  'on-secondary': #000000,
+  'on-background': #000000,
+  'on-surface': #000000,
+  'on-error': #ffffff,
+);
+
+$dark-theme-colors: (
+  'primary': #BB86FC,
+  'secondary': #03dac6,
+  'background': #303030,
+  'surface': #424242,
+  'error': #cf6679,
+  'on-primary': #000000,
+  'on-secondary': #000000,
+  'on-background': #ffffff,
+  'on-surface': #ffffff,
+  'on-error': #000000,
+);
+
+@function v($name, $fallback: null) {
+  @if ($fallback) {
+    @return var(--#{$name}, #{$fallback});
+  } @else {
+    @return var(--#{$name});
+  }
+}
+
+@function dark-theme-color($key: "primary") {
+  @return map-get($dark-theme-colors, $key);
+}
+
+$body-bg: v('background');
+
 @import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/functions';

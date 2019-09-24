@@ -1,0 +1,7 @@
+@import 'variables';
+
+.dark {
+  @each $color, $value in $dark-theme-colors {
+    --#{$color}: #{$value};
+  }
+}

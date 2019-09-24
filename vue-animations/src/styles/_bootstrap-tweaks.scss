@@ -1,0 +1,48 @@
+@import 'variables';
+
+.navbar {
+  background: v('surface');
+}
+
+a {
+  color: v('primary');
+}
+
+@each $color, $value in $theme-colors {
+  .btn-#{$color} {
+    border-color: v($color);
+    background-color: v($color);
+    color: v('on-' + $color);
+
+    &:hover,
+    &:focus,
+    &:active {
+      border-color: v($color);
+      background-color: v($color);
+      color: v('on-' + $color);
+    }
+  }
+
+  .btn-outline-#{$color} {
+    border-color: v($color);
+    color: v($color);
+
+    &:hover,
+    &:focus,
+    &:active {
+      border-color: v('on-' + $color);
+      background-color: v($color);
+      color: v('on-' + $color);
+    }
+  }
+}
+
+.btn-fab {
+  @include square(50px);
+  border-radius: 50%;
+}
+
+.card {
+  background-color: v('surface');
+  color: v('on-surface');
+}
